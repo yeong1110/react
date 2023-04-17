@@ -6,11 +6,25 @@ import Modal from './Component/Modal';
 
 function App() {
   let post = "나메코"
-  let [a, setA] = useState(['블로그 글 제목b1','블로그 글 제목a2','블로그 글 제목c3'])
+  let [a, setA] = useState(['제목1','제목2','제목3']);
   let [like, setLike] = useState([0,0,0]);
   let [modal, setModal] = useState(false);
-  let [title, setTitle] = useState(0); //상태 저장
+  let [title, setTitle] = useState(0);
+  let [input, setInput] = useState("");
 
+
+  let isFalse = function(){
+    if(input == "" || input == null || input == undefined ){
+      alert("빔")
+    }else{
+      let copya = [...a];
+      copya.unshift(input);
+      setA(copya);
+      let copyLike2 = [...like];
+      copyLike2.unshift(0);
+      setLike(copyLike2);
+    }
+  }
 
   return (
     <div className="App">
@@ -30,12 +44,24 @@ function App() {
                 copyLike[i] = copyLike[i] +1;
                 setLike(copyLike)
               }}>💖</span>{like[i]}
-              <p>4월6일 발행</p>
+              <p>글쓴이 사람</p>
+              <button onClick={(i)=>{
+                let copya2 = [...a];
+                copya2.splice(i,1);
+                setA(copya2);
+              }}>X</button>
               </div>
               
             )
           })
         }
+        <input type="text" onChange={(e)=>{
+          // console.log(e.target.value)
+
+          setInput(e.target.value)
+          console.log(input);
+        }}/>
+        <button onClick={isFalse}>글쓰기</button>
         {modal == true ? <Modal color="skyblue" name={a} title={title} /> : null} 
       
     </div>
