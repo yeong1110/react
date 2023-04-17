@@ -1,3 +1,12 @@
+button{
+  border: 0;
+  font-size: 0;
+  outline: 0;
+}
+
+
+
+
 .black_nav{
   display: flex;
   /* background-image: linear-gradient(45deg, #96fbc4 0%, #f9f586 100%); */
@@ -22,7 +31,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 50px;
   text-align: left;
   border-bottom: 1px solid #333;
 }
@@ -83,28 +92,80 @@
 }
 
 .App {
+  position: relative;
   width: 500px;
   margin: 0 auto;
   text-align: center;
   margin-top: 100px;
   height: 700px;
-  overflow-y: scroll;
+
   border-radius: 2px;
   background: #e7fbc1;
 
 }
 
+.App::before{
+  content: "";
+  position: absolute;
+  left: -10px;
+  display: block;
+  width: 30px;
+  height: 100%;
+  background: url(/public/2.svg);
+}
 
-.App::-webkit-scrollbar{
+.list_box{
+  width: 100%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.list_box::-webkit-scrollbar{
   width: 8px;
 }
 
-.App::-webkit-scrollbar-track{
+.list_box::-webkit-scrollbar-track{
   background: #eeeeee;
 }
 
-.App::-webkit-scrollbar-thumb{
+.list_box::-webkit-scrollbar-thumb{
   width: 8px;
   height: 8px;
-  background: #96fbc4;
+  background: #f0ffba;
+}
+
+.list_title{
+  
+}
+
+.input_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#render{
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#render::before,
+#render::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+}
+
+#render::before{
+  position: relative;
+  top: 2px;
+}
+
+#render::after{
+  transform: rotate(90deg);
+  width: 20px;
 }
