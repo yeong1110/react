@@ -1,17 +1,80 @@
 .black_nav{
   display: flex;
-  background-image: linear-gradient(45deg, #96fbc4 0%, #f9f586 100%);
+  /* background-image: linear-gradient(45deg, #96fbc4 0%, #f9f586 100%); */
   width: 100%;
   color: #fff;
   /* padding-left: 28px; */
   justify-content: center;
 }
 
+.black_nav h4{
+
+}
+
+#text{
+  padding: 10px;
+  border: #333;
+  outline: 0;
+
+}
+
 .list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 20px;
   text-align: left;
   border-bottom: 1px solid #333;
 }
+
+.btn_box{
+  display: flex;
+  padding-right: 20px;
+}
+
+.like_box{
+  padding-right: 20px;
+}
+
+#close{
+  border: 0;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  background: none;
+  cursor: pointer;
+
+}
+
+#close:hover::before{
+  transform: rotate(130deg);
+}
+
+#close:hover::after{
+  transform: rotate(45deg);
+}
+
+#close::before,
+#close::after{
+  content: "";
+  position: relative;
+  width: 20px;
+  height: 2px;
+  display: block;
+  background: #ff6666;
+  transition: 0.3s ease;
+
+}
+
+#close::before{
+  transform: rotate(45deg);
+  top: 2px;
+}
+
+#close::after{
+  transform: rotate(130deg);
+}
+
 
 .modal{
   margin-top: 20px;
@@ -20,14 +83,17 @@
 }
 
 .App {
-  width: 1000px;
+  width: 500px;
   margin: 0 auto;
   text-align: center;
   margin-top: 100px;
-  height: 500px;
+  height: 700px;
   overflow-y: scroll;
   border-radius: 2px;
+  background: #e7fbc1;
+
 }
+
 
 .App::-webkit-scrollbar{
   width: 8px;

@@ -11,7 +11,6 @@ function App() {
   let [modal, setModal] = useState(false);
   let [title, setTitle] = useState(0);
   let [input, setInput] = useState("");
-  let input2 = document.getElementsByTagName("input")
 
   let enter = function(e){
     if(e.keyCode === "13"){
@@ -38,7 +37,8 @@ function App() {
       <div className='black_nav'>
         <h4 style={{color:"#3b7e69",fontSize:"20px"}}>오늘 뭐할래?</h4>
       </div>
-        <input type="text" onKeyUp={(e)=>{
+      <div>
+        <input id='text' type="text" onKeyUp={(e)=>{
           (e.keyCode === 13 ? isFalse(): console.log(1))
         }} onChange={(e)=>{
           setInput(e.target.value)
@@ -52,16 +52,16 @@ function App() {
               <h4 onClick={()=>{
                 setTitle(i);
                 setModal(modal == true ? modal = false : modal = true)
-              }}>{a[i]}</h4><span onClick={()=>{
+              }}>{a[i]}</h4> <div className='btn_box'> <div className='like_box'> <span onClick={()=>{
                 let copyLike = [...like];
                 copyLike[i] = copyLike[i] +1;
                 setLike(copyLike)
-              }}>💖</span>{like[i]}
-              <button onClick={(i)=>{
+              }}>💖</span>{like[i]}</div>
+              <button id='close' onClick={(i)=>{
                 let copya2 = [...a];
                 copya2.splice(i,1);
                 setA(copya2);
-              }}>X</button>
+              }}>X</button></div> 
               </div>
               
             )
@@ -69,7 +69,7 @@ function App() {
         }
 
         {modal == true ? <Modal color="skyblue" name={a} title={title} /> : null} 
-      
+        </div>
     </div>
   );
 }
