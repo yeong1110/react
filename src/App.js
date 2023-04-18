@@ -53,6 +53,13 @@ function App() {
 
   return (
     <div className="App">
+      <div className="sky" style={{position:'fixed',top:'0',left:'0'}}>
+        <div className="cloud variant-1"></div>
+        <div className="cloud variant-2"></div>
+        <div className="cloud variant-3"></div>
+        <div className="cloud variant-4"></div>
+        <div className="cloud variant-5"></div>
+      </div>
       <div className='black_nav'>
         <h4 style={{color:"#4c4722",fontSize:"20px"}}>오늘 뭐할래?</h4>
       </div>
@@ -95,8 +102,9 @@ function App() {
         }
         </div>
 
-        {modal == true ? <Modal color="skyblue" name={a} title={title} date={date} setModal={modalHandler}/> : null} 
+        {modal == true ? <Modal color="#f2f7dc" name={a} title={title} date={date} setModal={modalHandler}/> : null} 
         </div>
+        <span className='name_tag'>정땡땡</span>
     </div>
   );
 }

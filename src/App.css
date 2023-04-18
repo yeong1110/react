@@ -1,7 +1,16 @@
+*{
+  font-family: 'Montserrat';
+}
+
+
 button{
   border: 0;
   font-size: 0;
   outline: 0;
+}
+
+span,h4{
+  cursor: pointer;
 }
 
 
@@ -87,8 +96,9 @@ button{
 
 .modal{
   margin-top: 20px;
-  text-align: right;
-  border-bottom: 1px solid #000;
+  text-align: left;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .App {
@@ -98,9 +108,9 @@ button{
   text-align: center;
   margin-top: 100px;
   height: 700px;
-
   border-radius: 2px;
   background: #e7fbc1;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 
 }
 
@@ -121,7 +131,7 @@ button{
 }
 
 .list_box::-webkit-scrollbar{
-  width: 8px;
+  width: 0;
 }
 
 .list_box::-webkit-scrollbar-track{
@@ -168,4 +178,101 @@ button{
 #render::after{
   transform: rotate(90deg);
   width: 20px;
+}
+
+.name_tag{
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  display: inline-flex;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  cursor: auto;
+}
+
+.name_tag::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  content: "";
+  display: block;
+  width: 90%;
+  height: 80%;
+  border: 1px solid #ff66666e;
+}
+
+.sky{
+  background: linear-gradient(#85a5cc 0, #d0e4f2 76%);
+  box-shadow: 0 0 20px 20px #d0e4f2;
+  height: 44%;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+}
+.sky .cloud {
+  background: #ebf5fc;
+  border-radius: 200px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  height: 39px;
+  margin-right: -102px;
+  position: absolute;
+  right: 0%;
+  width: 102px;
+}
+.sky .cloud.variant-1 {
+  top: 7%;
+  -webkit-transform: scale(0.2);
+  -webkit-animation: clouds-in-out 16s 0s infinite linear;
+}
+.sky .cloud.variant-2 {
+  top: 18%;
+  -webkit-transform: scale(0.4);
+  -webkit-animation: clouds-in-out 17s 2s infinite linear;
+}
+.sky .cloud.variant-3 {
+  top: 35%;
+  -webkit-transform: scale(0.6);
+  -webkit-animation: clouds-in-out 18s 4s infinite linear;
+}
+.sky .cloud.variant-4 {
+  top: 38%;
+  -webkit-transform: scale(0.8);
+  -webkit-animation: clouds-in-out 19s 6s infinite linear;
+}
+.sky .cloud.variant-5 {
+  top: 60%;
+  -webkit-transform: scale(1);
+  -webkit-animation: clouds-in-out 20s 8s infinite linear;
+}
+.sky .cloud:before, .sky .cloud:after {
+  background: #ebf5fc;
+  border-radius: 100px;
+  content: "";
+  height: 45px;
+  left: 10px;
+  position: absolute;
+  top: -10px;
+  width: 60px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.sky .cloud:after {
+  height: 60px;
+  left: auto;
+  right: 12px;
+  top: -24px;
+  width: 60px;
+}
+
+@keyframes clouds-in-out {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 105%;
+  }
 }
